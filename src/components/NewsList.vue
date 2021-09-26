@@ -3,6 +3,9 @@
     <ul>
       <li v-for="news in newsItems" :key="news.title">
         <h2>{{ news.title }}</h2>
+        <div class="author">
+          <p>{{ news.author }}</p>
+        </div>
         <div class="description">
           <p>{{ news.description }}</p>
         </div>
@@ -45,6 +48,15 @@ export default defineComponent({
   h2 {
     margin: 0 0 10px;
     text-transform: capitalize;
+  }
+}
+.author {
+  display: flex;
+
+  p {
+    color: #17bf66;
+    font-weight: bold;
+    margin: 10px 4px;
   }
 }
 </style>
