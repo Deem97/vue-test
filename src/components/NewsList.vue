@@ -15,14 +15,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import News from "@/types/News";
+import { defineComponent } from "vue";
+// import News from "@/types/News";
 
 export default defineComponent({
   props: {
     newsItems: {
       required: true,
-      type: Array as PropType<News[]>,
+      type: Array
     },
   },
 });
