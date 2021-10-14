@@ -1,12 +1,12 @@
 <template>
-  <div class="news-list">
+  <div :class="$style.newsList">
     <ul>
       <li v-for="news in newsItems" :key="news.title">
         <h2>{{ news.title }}</h2>
-        <div class="author">
+        <div :class="$style.author">
           <p>{{ news.author }}</p>
         </div>
-        <div class="description">
+        <div :class="$style.description">
           <p>{{ news.description }}</p>
         </div>
       </li>
@@ -15,21 +15,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-// import News from "@/types/News";
+import { defineComponent, PropType } from "vue";
+import News from "@/types/News";
 
 export default defineComponent({
   props: {
     newsItems: {
       required: true,
-      type: Array
+      type: Array as PropType<News[]>,
     },
   },
 });
 </script>
 
-<style scoped lang="scss">
-.news-list {
+<style lang="scss" module>
+.newsList {
   max-width: 960px;
   margin: 40px auto;
 

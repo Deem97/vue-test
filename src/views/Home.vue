@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, computed} from "vue";
-// import News from "@/types/News";
 import NewsList from "@/components/NewsList.vue";
 import { useStore } from "vuex";
 
@@ -18,19 +17,7 @@ export default defineComponent({
   setup() {
     const store = useStore();
     onMounted(()=> store.dispatch('fetchData'));
-    const loading = computed(() => store.state.newsItems)
-    // const newsItems = ref<News[]>([
-    //   {
-    //     title: "farm worker",
-    //     author: "lon lon ranch",
-    //     description: "ABCDERG",
-    //   },
-    //   {
-    //     title: "quarryman",
-    //     author: "lon lon ranch",
-    //     description: "ABCDERG",
-    //   },
-    // ]);
+    const loading = computed(() => store.state.items)
     return { loading };
   },
 });
